@@ -6,9 +6,7 @@ from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import DataRequired, EqualTo
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_bootstrap import Bootstrap
-import var
-import mysql.connector
-import flup
+
 
 # ------------------------ INITIALIZE ------------------------
 app = Flask(__name__)
@@ -17,8 +15,14 @@ login_manager.init_app(app)
 
 Bootstrap(app)
 
-app.config['SECRET_KEY'] = var.secret_key
-app.config['SQLALCHEMY_DATABASE_URI'] = var.connect
+app.config['SECRET_KEY'] = "the-secret-key"
+
+# In production
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://user:password@localhost/your_database'
+
+# In Development
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database.db'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
