@@ -1,0 +1,9 @@
+Flask
+flask_login
+flask_sqlalchemy
+flask_wtf
+flask_bootstrap
+WTForms
+Werkzeug
+flup
+mysql_connector
