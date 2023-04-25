@@ -1,6 +1,6 @@
 # Deploy a Flask App on Apache Shared Hosting with MySql
 
-Preparing the Application Before Deployment
+## Preparing the Application Before Deployment
 
 Flask provides a run command to run the application with a development server. In production we will substitute it with a FastCGI server. In our case We will use flup, it is one of the most popular and also is used in the Flask documentation.
 
@@ -8,11 +8,11 @@ It is usually recommended to use a virtual environment whenever you work on a Py
 
 Also, consider using SQLAlchemy to create and maintain the app’s database. This option will let you work with SQLite on development and easily migrate to MySql, PostgreSQL, or other relational databases for production.
 
-Make sure that any app.run() calls are inside an if __name__ == ‘__main__’ block.
+Make sure that any **app.run()** calls are inside an *if __name__ == ‘__main__’* block.
 
 Remember to delete all printings you used during development because they will break the CGI by writing into the HTTP response.
 
-Setting up the Environment for Deployment in Production
+## Setting up the Environment for Deployment in Production
 
 You can set your environment with an SSH connection or a terminal application online included in the cPanel.
 
@@ -20,11 +20,12 @@ Before deployment to production, it should be verified with the technical staff 
 
 The following steps are described assuming the app will be installed in the folder deploy_flask/. You may change the name of the folder at your convenience.
 
-Step 1: Install the Virtual Environment
+### Step 1: Install the Virtual Environment
 
 Sometimes you may substitute $HOME with the path to the root of your installation.
-
+\begin{lstlisting}
 python -m venv $HOME/venv/deploy_flask/
+\end{lstlisting}
 Then activate the virtual environment:
 
 . $HOME/venv/deploy_flask/bin/activate
