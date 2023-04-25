@@ -23,12 +23,17 @@ The following steps are described assuming the app will be installed in the fold
 ### Step 1: Install the Virtual Environment
 
 Sometimes you may substitute $HOME with the path to the root of your installation.
-\begin{lstlisting}
+
+```
 python -m venv $HOME/venv/deploy_flask/
-\end{lstlisting}
+```
+
 Then activate the virtual environment:
 
+```
 . $HOME/venv/deploy_flask/bin/activate
+```
+
 After activation, you should see some new text on the command line to indicate you are using your newly created virtual environment. In my case, it looks like this.
 
 (deploy_flask)username@domain.com [~]#
